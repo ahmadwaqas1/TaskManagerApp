@@ -1,0 +1,657 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.l-heading{
+    margin-bottom: 1.5rem;
+}
+.s-heading{
+    margin-top: 1rem;
+    padding-left: 3.2rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.p-1{
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+.p-2{
+    font-size: 0.9rem;
+}
+.btn{
+    padding: 0.25rem 0.5rem;
+}
+.btn-login{
+    width: 80%;
+    padding: 0.75rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    background-color: rgb(47, 103, 207);
+    color: #f3f3f3;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.btn-signup{
+    width: 80%;
+    padding: 0.75rem;
+    margin: auto;
+    background-color: rgb(23, 156, 23);    
+    border: none;
+    border-radius: 0.25rem;
+    float: center;
+    cursor: pointer;
+}
+
+            /* Navbar Design */
+
+.nav-div{
+    display: flex;
+    position: sticky;
+    top: 0;
+    margin: auto;
+    padding: 1rem;
+    background-color: rgb(55, 91, 158);
+    color: #333;
+    justify-content: space-between;
+    
+}
+
+.nav-div .logo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #f3f3f3;
+}
+
+#navbar ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#navbar ul li a{
+    color: #fff;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover{
+    background-color: rgb(34, 74, 146) ;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 1.1rem;
+
+}
+
+#navbar ul li p{
+    color: #fff;
+}
+
+
+#signup-messages{
+    padding: 0.5rem 2rem;
+    background: rgb(130, 177, 229);
+    text-align: center;
+    color: #fff;
+}
+
+#task-detail-button{
+    padding: 0.5rem 1rem;
+    background-color:peru;
+    margin: 0.2rem;
+    border-radius: 2px;
+    border: none;
+    color: white;
+}
+#task-detail-button:hover{
+    cursor: pointer;
+}
+
+
+/*    Login form Design*/
+
+#login-page .container{
+    background: #e6e6e6;
+    /* margin: auto; */
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+#login-page .text-info{
+    margin-top: 10rem;
+    padding: 0 2rem;
+    margin-left: 20%;
+}
+
+#login-page .text-info h1{
+    color: rgb(47, 103, 207);
+}
+
+#login-page .login-form .container{
+    background: #fff;
+    height: 40vh;
+}
+
+#login-page .login-form{
+    margin: auto;
+}
+#login-page .login-form form{
+    margin: auto;
+}
+#login-page .login-form .form-group{
+    padding: 0.5rem;
+    max-width: 100%;
+}
+#login-page .login-form .form-group input{
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+    align-items: center;
+}
+
+#login-page .login-form .form-group .btn{
+    width: 85%;
+    justify-content: center;
+    
+}
+
+#login-page .login-form hr{
+    width: 80%;
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#login-page .login-form p{
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+#login-page .login-form .login-notification{
+    margin-bottom: 1rem;
+    max-width: 83%;
+
+}
+
+
+
+
+
+/*        Sign Up Page Design         */
+
+#signup-page .container{
+    width: 400px;
+    margin: auto;
+    margin-top: 5rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+#signup-page .container .form-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+#signup-page .container .form-input input{
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0.5rem;
+}
+
+#signup-page .container .form-input .checkbox{
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+}
+
+#signup-page .container .form-input .checkbox p{
+    justify-content: center;
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+#signup-page .container .form-input #signup{
+    background: rgb(23, 172, 23);  
+    color: #fff;
+    font-size: large;
+    border: none;
+    margin-top: 1rem;
+}
+
+#signup-page .container .signup-policy{
+    font-size: small;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#signup-page .container .signup-policy .login-link{
+    /* font-size: large; */
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+    /* Grid Imporatnt and Recent Tasks Design */
+
+#main-section .container{
+    max-width: 1300px;
+    margin: auto;
+}
+#main-section .container .grid-important{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+#main-section .container .grid-recent{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+#main-section .container .task-grid{
+    text-align: center;
+    background-color: #cfae70;
+    margin: 1rem auto;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: #333;
+    
+    /* position: absolute; */
+}
+.task-grid h3{
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+.task-grid p{
+    padding-bottom: 0.5rem;
+    height: 100px;
+}
+/*  Percentage Section Design   */
+
+ #main-section .container .task-grid .deadline-task{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position:absolute;
+    bottom: 70px;
+}
+
+#main-section .container .grid-recent .empty-task-p{
+    
+    background: rgb(130, 177, 229);
+    /* margin:auto; */
+    margin: 1rem 3rem;
+    padding: 1rem;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#main-section .container .grid-important .empty-task-p{
+    background: rgb(130, 177, 229);
+    /* margin:auto; */
+    margin: 1rem 3rem;
+    padding: 1rem;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+
+#percentage-section .container{
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+#percentage-section .container .new-task-button{
+    margin: 1rem auto;
+    padding: 1rem;
+    display: block;    
+    font-weight: bold;
+    border-radius: 2px solid;
+}
+#percentage-section .container .new-task-button:hover{
+    cursor: pointer;
+    color:rgb(97, 97, 97);
+
+}
+#percentage-section .container .heading-percent{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 2rem;
+}
+
+#percentage-section .container .percent-container{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    padding: 2rem;
+}
+#percentage-section .container .percent-container .percent{
+    margin: auto;
+}
+#percentage-section .container .percent-container .percent .percent-title{
+    font-size: large;
+}
+#percentage-section .container .percent-container .percent .percent-title:hover{
+    display: none !important;
+}
+
+
+#percentage-section .container .login-notifier{
+    background: rgb(130, 177, 229);
+    padding: 1rem;
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+
+    /* Create New Task Popover Design */
+
+#newtask-section{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#newtask-section .container{
+    top: -132px;
+
+    height: 300px;
+    width: 500px;
+    background-color: rgb(231, 231, 231);
+    padding: 20px;
+    border-radius: 5px;
+    position:relative;
+    z-index: 10;
+}
+
+#newtask-section .container #popover-close:hover{
+    cursor: pointer;
+}
+#newtask-section .container .form-group input,textarea{
+    display: flex;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    width: 80%;
+    align-self: center;
+    align-content: center;
+    margin: 0.5rem auto;
+}
+
+#newtask-section .container .form-group textarea{
+    width: 85%;
+    margin: auto;
+    max-width: 450px;
+    max-height: 90px;
+}
+#newtask-section .container .form-group #is-important{
+    display: inline;
+    margin-left: 2.1rem;
+    margin-right: 0;
+    padding: 0;
+    width: 5%;
+}
+#newtask-section .container .form-group .save-button{
+    justify-content: center;
+    width: 50%;
+    background: #078c00;
+    border-radius: 5px;
+    border-style: none;
+    color: #f3f3f3;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#newtask-section .container .form-group .save-button:hover{
+    background-color: #499148;
+}
+
+
+
+
+    /* Search Bar and Detail Task Section Design */
+
+#tasks-details .container{
+    background-color: #ddd;
+    width: 100%;
+    padding: 0;
+}
+
+#tasks-details .container .search-bar{
+    display: flex;
+    /* float: right; */
+    justify-content: center;
+    width: 100%;
+}
+#tasks-details .container .search-bar .submit{
+    padding: 0.5rem;
+    width: 2.5%;
+    margin-top: 1rem;
+}
+#tasks-details .container .search-bar .search-input{
+    padding: 0.5rem;
+    /* float: right; */
+    width: 50%;
+    margin-top: 1rem;
+}
+
+
+#tasks-details .container .detail-table{
+    max-width: 1300px;
+    margin: auto;
+    padding: 1rem;
+    margin: 1rem;
+}
+#tasks-details .container .detail-table table{
+    width: 100%;
+}
+
+#tasks-details .container .detail-table .table-heading{
+    width: 50%;
+    /* margin: 0 5rem; */
+}
+#tasks-details .container .detail-table th{
+    height: 50px;
+}
+#tasks-details .container .detail-table td{
+    height: 30px;
+    border-bottom: 1px solid #333;
+}
+#tasks-details .container .detail-table th,td{
+    text-align: center;
+}
+
+#tasks-details .container .detail-table .table-data{
+    border-bottom: 1px solid rgb(39, 39, 39);
+}
+
+            /* Task Completion Notification Section */
+
+#task-completion-notify-section{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#task-completion-notify-section .pop-over{
+    height: 340px;
+    width: 500px;
+    background-color: rgb(231, 231, 231);
+    padding: 20px;
+    border-radius: 5px;
+    top: -132px;
+    position:relative;
+    z-index: 10;
+}
+            
+#task-completion-notify-section .pop-over .container-text{
+    padding: 0.5rem;
+}
+#task-completion-notify-section .pop-over .container-text h2{
+    text-align: center;
+    color: red;
+}
+#task-completion-notify-section .pop-over .container-text .st-date-heading{
+    font-weight: bold;
+}
+#task-completion-notify-section .pop-over .container-text h4{
+    text-decoration: underline;
+}
+#task-completion-notify-section .pop-over .container-text h4,p{
+    padding: 0.3rem 0;
+}
+
+#task-completion-notify-section .pop-over .container-button{
+    padding: 0.1rem;
+    
+    text-align: center;
+}
+#task-completion-notify-section .pop-over .container-button .text-confirm{
+    padding-bottom: 0.75rem;
+}
+#task-completion-notify-section .pop-over .container-button .btn{
+    padding: 0.5rem 2rem;
+    max-width: 100px;
+    border: none;
+    border-radius: 3px ;
+}
+#task-completion-notify-section .pop-over .container-button .btn:hover{
+    cursor: pointer;
+}
+#task-completion-notify-section .pop-over .container-button .yes-button{
+    background-color: #078c00;
+    color: #f3f3f3;
+    margin-right: 1rem;  
+}
+#task-completion-notify-section .pop-over .container-button .no-button{
+    background-color:red;
+    color: #f3f3f3;
+    margin-left: 1rem;
+}
+
+
+#tasks-details .container .footer-default{
+    background: rgb(130, 177, 229);
+    padding: 2rem;
+
+    text-align: center;
+}
+
+
+
+
+
+
+/* a */
+body{
+    background: #f3f3f3;
+  }
+  
+  #show-details-section .container .detail-heading{
+    font-size: large;
+    line-height: 1rem;
+  }
+  
+  #show-details-section .container{
+    max-width: 1300px;
+    margin: 0 5rem;
+    padding: 1rem;
+    
+  }
+  #show-details-section .container .task-details h2{
+      margin-bottom: 1rem;
+  }
+
+  #show-details-section .container .task-details{
+      margin: 2rem 0;
+      /* line-height: 1.1rem; */
+  }
+  #show-details-section .container .task-edit input{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+  }
+  #show-details-section .container .task-edit input:hover{
+    cursor: pointer;
+  }
+  #show-details-section .container .form-edit{
+    display: inline-block;
+    margin: auto;
+    /* margin-top: 2rem; */
+  }
+  
+  #show-details-section .container .form-edit input,textarea{
+    
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-sizing: border-box;
+    margin: 0.25rem 0;
+    /* resize: vertical; */
+  }
+  
+  #show-details-section .container .form-edit .form-group{
+    display: flex;
+    width: 35%;
+    margin-right: 0;
+    padding-right: 0;
+    align-items: center;
+    border: none;
+    
+  }
+  #show-details-section .container #save:hover{
+    cursor: pointer;
+    background-color: grey;
+    color: #f3f3f3;
+  }

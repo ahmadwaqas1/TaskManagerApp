@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Task Detail | {{id}}</title>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-div">
+        <div class="logo">
+            Task Manager
+        </div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><p class="username-nav">Welcome  {{user.username}}!</p></li>
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+  </nav>
+  <section id="show-details-section">
+    <div class="container">
+        <div class="task-details">
+          <h2>{{task_detail.title}}</h2>
+          <p>{{task_detail.discreption}}</p>
+          <p><span class="detail-heading"> Deadline Date: </span>{{task_detail.task_end_date}}</p>
+          <p><span class="detail-heading"> Remaining Time: </span></p>
+          <p><span class="detail-heading"> Task is important: </span>{{task_detail.is_important}}</p>
+          <p><span class="detail-heading"> Task is Finished: </span>{{task_detail.is_Finished}}</p>
+        </div>
+        
+        <!-- <div class="task-edit">
+          
+          <form action="" method="POST"> {% csrf_token %}
+            <input type="submit" name="edit-task" id="edit" value="Edit">
+          </form>  
+
+          <form action="{% url 'delete' task_detail.id %}" method="POST"> {% csrf_token %}
+            <input type="submit" name="delete-task" name="delete" id="delete" value="Delete">
+          </form>
+
+        </div>
+         -->
+        <div class="form-edit">
+          <div class="form-input">
+              <form action="{% url 'detail' task_detail.id %}" method="POST"> {% csrf_token %}
+                  <input type="text" name="name" id="name" value="{{task_detail.title}}" required>
+                  <textarea name="discription" id="discription" cols="50" rows="5">{{task_detail.discreption}}</textarea>
+                  <input type="date" name="date" id="date" value="{{task_detail.task_end_date}}" required>
+                  <div class="form-group">
+                    <p>Is Important</p>
+                    {% if task_detail.is_important %}
+                        <input type="checkbox" name="is-important" value="True" checked>
+                    {% else %}
+                        <input type="checkbox" name="is-important" value="False">
+                    {% endif %}
+                  </div>
+                  <div class="form-group">
+                    <p>Is Finished</p>
+                    {% if task_detail.is_Finished %}
+                        <input type="checkbox" name="is-Finished" value="True" checked>
+                    {% else %}
+                        <input type="checkbox" name="is-Finished" value="False">
+                    {% endif %}
+                    </div>
+                    <input type="submit" name="submit" value="Save" id="save">
+
+              </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+</body>
+</html>

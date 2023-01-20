@@ -1,0 +1,215 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/circle.css' %}">
+    <title>Task Manager App</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-div">
+            <div class="logo">
+                Task Manager
+            </div>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                    <li><p class="username-nav">Welcome  {{user.username}}!</p></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <section id="main-section">
+        <div class="container">
+            <h2 class="s-heading">Some Most Important Tasks</h2>
+            <div class="grid-important">
+            {% if tasks %}
+                {% for task in tasks %}
+                    {% if task.is_important is True and task.is_Finished is False %}              
+                        <div class="task-grid">
+                            <h3>{{task.title}}</h3>
+                            <p class="task-discription">{{task.discreption|truncatechars:200}}</p>
+                            <p class="deadline-task"><h3>DeadLine </h3>{{task.task_end_date}}</p>
+                        </div> 
+                    {% else %}
+
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p class="empty-task-p">No Important Tasks Added... Please Create a New Task +</p>
+            {% endif %}
+            </div>
+            <h2 class="s-heading">Some Most Recent Tasks</h2>
+            <div class="grid-recent">
+                {% if tasks %}
+                    {% for task in recent_task %}
+                        <div class="task-grid">
+                            <h3>{{task.title}}</h3>
+                            <p class="task-discription">{{task.discreption|truncatechars:100}}</p>
+                            <p class="deadline-task"><h3>DeadLine </h3>{{task.task_end_date}}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="empty-task-p">No Recent Tasks Added... Please Create a New Task +</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <section id="percentage-section">
+        <div class="container">
+            {% if user.is_authenticated %}
+                <input type="submit" value="+ Create New Task" class="new-task-button" id="new-task">
+            {% else %}
+                <input type="submit" value="+ Create New Task" class="new-task-button">
+                <p class="login-notifier">Please Login First to Add Tasks...</p>
+            {% endif %}
+            <div class="heading-percent">
+                <h1>Important</h1>
+                <h1>Finished</h1>
+                <h1>Failed</h1>
+            </div>
+            <div class="percent-container clearfix">
+                
+                
+                <div class="percent Important-percent c100 p{{task_imp_percent | floatformat:'0'}} big">
+                
+                    <span><p class="percent-title"></p>{{ task_imp_percent | floatformat:"1" }}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+
+                <div class="percent success-percent c100 p{{ task_finish_percent | floatformat:'0' }} big green">
+                    <span><p class="percent-title"></p>{{ task_finish_percent | floatformat:"1" }}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+
+                <div class="percent fail-percent c100 p{{ task_failed_percent | floatformat:'0' }} big orange">
+                    <span><p class="percent-title"></p>{{ task_failed_percent | floatformat:'1' }}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+                    <!-- Pop over of New Task Section -->
+
+    <section id="newtask-section">
+        <div class="container pop-over">
+            <p id="popover-close">&#10005;</p>
+            <form class="form-group" action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="taskname" id="task-name" placeholder="Task Title" required>
+                <textarea name="taskdiscription" id="task-disc" rows="4" cols="40" placeholder="Task Description" required></textarea>
+                <input type="datetime-local" id="task-date" name="Task-DeadLine" placeholder="Task Finish Date" required>
+                <p class="is-important-link"><input type="checkbox" id="is-important" name="Is-Important" value="True">Is Important</p>
+                <input type="submit" value="Save" class="save-button" name="submit" id="Save">
+            </form>
+        </div>
+    </section>
+
+                    <!-- Pop over for Task Completion Notification  -->
+    {% for task in tasks %}
+        {% if task.is_completed is False and task.is_Finished is True %}
+            <section id="task-completion-notify-section">
+
+                <div class="pop-over">
+                    <div class="container-text">
+
+                        <h2 class="h-popover l-heading">Task Deadline has Reached</h2>
+                        <h4 class="title-heading">{{task.title}}</h4>
+                        <p class="discription-task">{{task.discreption}}</p>
+                        <p class="date-task"><span class="st-date-heading">Start Date</span> : 15/04/21 12:52:89 PM</p>
+                        <p class="time-total"><span class="st-date-heading">Total Time</span> : 10days, 5hrs, 3mins</p>
+                    </div>
+                    <div class="container-button">
+                        <form method="POST" action="{% url 'task-completed' task.id %}" class="form-group"> {% csrf_token %}
+                            <p class="text-confirm">Is this task completed!</p>
+                            <input type="submit" value="Yes" id="task-finish-button" class="btn yes-button" name="submit-yes">
+                            <input type="submit" value="No" id="task-finish-button" class="btn no-button" name="submit-no">
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        {% endif %}
+    {% endfor %}
+
+
+    <section id="tasks-details">
+
+        {% if tasks %}
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" class="search-input">
+                <i class="fas fa-search submit" type="submit" id="search-submit"></i>
+                <!-- <input type="submit" class="submit" class="fas fa-search submit" id="search-submit"> -->
+            </div>
+            <div class="detail-table">
+                 <table id="detail-task"> 
+                    <tr class="table-heading">
+                        <th>Sr#</th>
+                        <th>Task Name</th>
+                        <th>Task Description</th>
+                        <th>Deadline Date</th>
+                        <th>Important</th>
+                    </tr>
+                
+                    {% for task in tasks %}
+                        <tr class="table-data">
+                            <td>{{task.id}}</td>
+                            <td>{{task.title}}</td>
+                            <td>{{task.discreption|truncatechars:50}}</td>
+                            <td>{{task.task_end_date}}</td>
+                            {% if task.is_important is True %}
+                                <td>Yes</td>
+                            {% else %}
+                                <td>No</td>
+                            {% endif %}
+                            <td>
+                                <form action="{% url 'detail' task.id %}"> {% csrf_token %}
+                                    <input type="submit" id="task-detail-button" value="Show Details">
+                                </form>
+                            </td>
+                            <td>
+                                <form method="POST" action="{% url 'delete' task.id %}"> {% csrf_token %}
+                                    <input type="submit" name="delete" id="task-detail-button" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                 </table>
+            </div>
+        </div>
+        {% else %}
+            <div class="container">
+                <p class="footer-default">Your Task Detail Will Show Here Once Tasks are Added.</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <script src="https://kit.fontawesome.com/e1707ff598.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+
+

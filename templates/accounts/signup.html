@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Sign Up Page</title>
+</head>
+<body>
+    <header id="signup-page">
+        <div class="container">
+            <div class="form-heading">
+                <h2>Sign Up and Start Working!</h2>
+            </div>
+            <form  method="post" action="{% url 'signup' %}" class="form-input">
+                {% csrf_token %}
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <input type="text" name="email" id="email" placeholder="Email" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="c-password" id="c-password" placeholder="Confirm Password" required>
+                <div class="checkbox"> <input type="checkbox" name="terms" id="terms" required><p class="term-p">
+                    By clicking, you will agree to the terms and policy.
+                </p></input></div>
+                <input type="submit" value="Sign Up" id="signup">
+                {% for message in messages %}
+                    <p id="signup-messages">{{message}}</p>
+                {% endfor %}
+                <div class="signup-policy">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="sign-up signup-policy">
+                    <p>Already have account <a class="login-link" href="{% url 'login' %}">Login Here</a>.</p>
+                </div>
+            </form>
+
+            <!-- <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="name" id="name" placeholder="Full Name">
+                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="text" name="password" id="password" placeholder="Password">
+                <input type="text" name="password" id="c-password" placeholder="Confirm Password">
+                <input type="submit" value="Sign Up" id="signup">
+            </form> -->
+
+        </div>
+    </header>
+</body>
+</html>

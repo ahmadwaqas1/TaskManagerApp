@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.l-heading{
+    margin-bottom: 1.5rem;
+}
+.s-heading{
+    margin-top: 1rem;
+    padding-left: 3.2rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.p-1{
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+.p-2{
+    font-size: 0.9rem;
+}
+.btn{
+    padding: 0.25rem 0.5rem;
+}
+.btn-login{
+    width: 80%;
+    padding: 0.75rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    background-color: rgb(47, 103, 207);
+    color: #f3f3f3;
+    border: none;
+    border-radius: 0.25rem;
+}
+.btn-signup{
+    width: 80%;
+    padding: 0.75rem;
+    margin: auto;
+    background-color: rgb(23, 156, 23);    
+    border: none;
+    border-radius: 0.25rem;
+    float: center;
+}
+
+            /* Navbar Design */
+
+.nav-div{
+    display: flex;
+    position:static;
+    top: 0;
+    margin: auto;
+    padding: 1rem;
+    background-color: rgb(55, 91, 158);
+    color: #333;
+    justify-content: space-between;
+    
+}
+
+.nav-div .logo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #f3f3f3;
+}
+
+#navbar ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#navbar ul li a{
+    color: #fff;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover{
+    background-color: rgb(34, 74, 146) ;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 1.1rem;
+
+}
+
+#navbar ul li p{
+    color: #fff;
+}
+
+
+
+
+/*    Login form Design*/
+
+#login-page .container{
+    background: #e6e6e6;
+    /* margin: auto; */
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+#login-page .text-info{
+    margin-top: 10rem;
+    padding: 0 2rem;
+    margin-left: 20%;
+}
+
+#login-page .text-info h1{
+    color: rgb(47, 103, 207);
+}
+
+#login-page .login-form .container{
+    background: #fff;
+    height: 40vh;
+}
+
+#login-page .login-form{
+    margin: auto;
+    /* margin-left: 5rem;
+    margin-top: 4rem;
+    display: block; */
+}
+#login-page .login-form form{
+    margin: auto;
+}
+#login-page .login-form .form-group{
+    padding: 0.5rem;
+    max-width: 100%;
+}
+#login-page .login-form .form-group input{
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+}
+
+#login-page .login-form hr{
+    width: 80%;
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#login-page .login-form p{
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+
+/*        Sign Up Page Design         */
+
+#signup-page .container{
+    width: 400px;
+    margin: auto;
+    margin-top: 5rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+#signup-page .container .form-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+#signup-page .container .form-input input{
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0.5rem;
+}
+
+#signup-page .container .form-input .checkbox{
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+}
+
+#signup-page .container .form-input .checkbox p{
+    justify-content: center;
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+#signup-page .container .form-input #signup{
+    background: rgb(23, 172, 23);  
+    color: #fff;
+    font-size: large;
+    border: none;
+    margin-top: 1rem;
+}
+
+#signup-page .container .signup-policy{
+    font-size: small;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+    /* Grid Imporatnt and Recent Tasks Design */
+
+#main-section .container{
+    max-width: 1300px;
+    margin: auto;
+}
+#main-section .container .grid-important{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+#main-section .container .grid-recent{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+#main-section .container .grid-important .task-grid,.grid-recent .task-grid{
+    text-align: center;
+    background-color: dimgray;
+    margin: 1rem auto;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: rgb(219, 217, 217);
+}
+
+/* Percentage Section Design */
+
+#percentage-section .container{
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+#percentage-section .container .new-task-button{
+    margin: 1rem auto;
+    padding: 1rem;
+    display: block;    
+    font-weight: bold;
+    border-radius: 2px solid;
+}
+#percentage-section .container .new-task-button:hover{
+    cursor: pointer;
+    color:rgb(97, 97, 97);
+
+}
+#percentage-section .container .heading-percent{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 2rem;
+}
+
+#percentage-section .container .percent-container{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    padding: 2rem;
+}
+#percentage-section .container .percent-container .percent{
+    margin: auto;
+}
+#percentage-section .container .percent-container .percent .percent-title{
+    font-size: large;
+}
+#percentage-section .container .percent-container .percent .percent-title:hover{
+    display: none !important;
+}
+
+
+    /* Create New Task Popover Design */
+
+#newtask-section{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#newtask-section .container{
+    height: 300px;
+    width: 500px;
+    background-color: rgb(231, 231, 231);
+    padding: 20px;
+    border-radius: 5px;
+    position:relative;
+    z-index: 10;
+}
+
+#newtask-section .container #popover-close:hover{
+    cursor: pointer;
+}
+#newtask-section .container .form-group input,textarea{
+    display: flex;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    width: 80%;
+    align-self: center;
+    align-content: center;
+    margin: 0.5rem auto;
+}
+#newtask-section .container .form-group #is-important{
+    display: inline;
+    margin-left: 2.1rem;
+    margin-right: 0;
+    padding: 0;
+    width: 5%;
+}
+#newtask-section .container .form-group #save{
+    justify-content: center;
+    width: 50%;
+    background: #078c00;
+    border-radius: 5px;
+    border-style: none;
+    color: #f3f3f3;
+    cursor: pointer;
+}
+
+    /* Search Bar and Detail Task Section Design */
+
+#tasks-details .container{
+    background-color: #ddd;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+#tasks-details .container .search-bar{
+    /* background-color: #ddd;
+    width: 100%;
+    padding: 1rem; */
+    margin:1rem 0;
+    display: flex;
+    /* float: right; */
+    justify-content: center;
+    width: 100%;
+}
+#tasks-details .container .search-bar .submit{
+    padding: 0.5rem;
+    width: 2.5%;
+}
+#tasks-details .container .search-bar .search-input{
+    padding: 0.5rem;
+    /* float: right; */
+    width: 50%;
+}
+
+#tasks-details .container .detail-table{
+    /* width: 100%;
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+    padding: 1rem;
+    justify-content: center; */
+    max-width: 1300px;
+    margin: auto;
+    padding: 1rem;
+    margin: 1rem;
+}
+#tasks-details .container .detail-table table{
+    width: 80%;
+}
+
+#tasks-details .container .detail-table .table-heading{
+    width: 50%;
+    /* margin: 0 5rem; */
+}
+#tasks-details .container .detail-table .table-heading th{
+    height: 50px;
+}
+#tasks-details .container .detail-table .table-heading td{
+    height: 30px;
+}
+#tasks-details .container .detail-table .table-heading th,td{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
